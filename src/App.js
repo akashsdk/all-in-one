@@ -8,6 +8,18 @@ import Footer from "./Screen/Footer";
 import Contact from "./Screen/Contact";
 
 
+import Calculator from './Component/Calculator';
+import SciCalculator from './Component/SciCalculator';
+import Calendar from './Component/Calendar';
+import RubikCube from './Component/RubikCube';
+import GPACalculator from './Component/GPACalculator';
+import Stopwatch from './Component/Stopwatch';
+import Timers from './Component/Timers';
+import Notepad from './Component/Notepad';
+import VoiceRecord from './Component/VoiceRecord';
+import InternetSpeed from './Component/InternetSpeed';
+import Maps from './Component/Maps';
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +29,18 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/Contact" element={<Contact />} />
+
+          <Route path="/Calculator" element={<Calculator />} />
+          <Route path="/Scientific-Calculator" element={<SciCalculator />} />
+          <Route path="/Calendar" element={<Calendar />} />
+          <Route path="/Rubik-Cube" element={<RubikCube />} />
+          <Route path="/GPA-Calculator" element={<GPACalculator />} />
+          <Route path="/Stopwatch" element={<Stopwatch />} />
+          <Route path="/Timers" element={<Timers />} />
+          <Route path="/Notepad" element={<Notepad />} />
+          <Route path="/Voice-Record" element={<VoiceRecord />} />
+          <Route path="/Internet-Speed" element={<InternetSpeed />} />
+          <Route path="/Maps" element={<Maps />} />
         </Routes>
         <Footer />
       </BrowserRouter>

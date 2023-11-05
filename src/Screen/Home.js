@@ -23,11 +23,11 @@ export default function Home() {
     <div >
       <div style={{ display: "flex" }}>
         {/* Calculator */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Calculator">
           <HomeItem Img={Calculator} FastText="Calculator" />
         </Link>
         {/* ScientificCalculator */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Scientific-Calculator">
           <HomeItem
             Img={ScientificCalculator}
             FastText="Scientific"
@@ -35,43 +35,43 @@ export default function Home() {
           />
         </Link>
         {/* GPA Calculator */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/GPA-Calculator">
           <HomeItem Img={GPACalculator} FastText="GPA" ScendText="Calculator" />
         </Link>
         {/* Calendar */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Calendar">
           <HomeItem Img={Calendar} FastText="Calendar" ScendText="" />
         </Link>
         {/* rubik's cube */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Rubik-Cube">
           <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
         </Link>
         </div>
         <div style={{ display: "flex" }}>
         {/* Stopwatch */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Stopwatch">
           <HomeItem Img={Stopwatch} FastText="Stopwatch" ScendText="" />
         </Link>
         {/* Timers */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Timers">
           <HomeItem Img={Timers} FastText="Timer's" ScendText="" />
         </Link>
         {/* Note pad */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Notepad">
           <HomeItem Img={Notepad} FastText="Notepad" ScendText="" />
         </Link>
         {/* voice Record */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Voice-Record">
           <HomeItem Img={voiceRecord} FastText="Voice" ScendText="Record" />
         </Link>
         {/* Internet Speed */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Internet-Speed">
           <HomeItem Img={internetSpeed} FastText="Internet" ScendText="Speed" />
         </Link>
         </div>
         <div style={{ display: "flex" }}>
         {/* Maps */}
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/Maps">
           <HomeItem Img={Maps} FastText="Maps" ScendText="" />
         </Link>
       </div>
