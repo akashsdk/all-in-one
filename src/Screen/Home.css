@@ -5,37 +5,3 @@
 
 
 
-.HomeItem-MainBody{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.HomeItemBody{
-    height: 180px;
-    width: 150px;
-    border: none;
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 10px;
-    color: #000;
-}
-
-.HomeItemBody:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color: #ff3333;
-}
-.HomeItemImage{
-    height: 80px;
-    margin-top: 15px;
-}
-.HomeItemText-1{
-    margin-top: 10px;
-
-}
-
-.HomeItemText-2{
-margin-top: -20px;
-}
