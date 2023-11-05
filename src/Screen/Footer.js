@@ -12,7 +12,7 @@ export default function Footer() {
           href="https://my-portfolio-d43ec.web.app/"
           target="_blank"
         >
-          <h3>&copy; {new Date().getFullYear()} Tasnim Shahriar Akash</h3>
+          <h3>&copy; {new Date().getFullYear()} by Tasnim Shahriar Akash</h3>
         </Button>
       </div>
     </footer>
