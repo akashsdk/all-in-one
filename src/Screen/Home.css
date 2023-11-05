@@ -6,15 +6,26 @@
 
 
 
-.HomeItemButton{
-    height: 200px;
-    width: 160px;
+.HomeItemBody{
+    height: 180px;
+    width: 120px;
     border: none;
     margin: 5px;
+    padding: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
 }
 
-.HomeItemButton:hover{
+.HomeItemBody:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #ff3333;
+}
+.HomeItemImage{
+    height: 80px;
+}
+.HomeItemText-1{
+    text-decoration: none;
+}
+.HomeItemText-2{
+    text-decoration: none;
 }
