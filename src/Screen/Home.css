@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+.HomeItemButton{
+    height: 200px;
+    width: 160px;
+    border: none;
+    margin: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.HomeItemButton:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #ff3333;
+}
