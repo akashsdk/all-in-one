@@ -15,6 +15,7 @@ import Timers from "../Icon/sand-clock.png";
 import Notepad from "../Icon/notes.png";
 import voiceRecord from "../Icon/voice.png";
 import internetSpeed from "../Icon/medium.png";
+import Maps from '../Icon/map.png';
 
 export default function Home() {
   return (
@@ -102,6 +103,16 @@ export default function Home() {
             <h2 className="HomeItemText-2">Speed</h2>
           </div>
         </Link>
+      </div>
+      <div style={{ display: "flex" }}>
+        {/* Maps */}
+        <Link style={{ textDecoration: "none" }} to="/">
+          <div className="HomeItemBody">
+            <img className="HomeItemImage" src={Maps} alt={""} />
+            <h2 className="HomeItemText-1">Maps</h2>
+          </div>
+        </Link>
+        
       </div>
     </div>
   );
