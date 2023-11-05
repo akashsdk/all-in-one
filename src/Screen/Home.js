@@ -20,8 +20,8 @@ import Maps from "../Icon/map.png";
 
 export default function Home() {
   return (
-    <div style={{ display: "flex" }}>
-      <div>
+    <div >
+      <div style={{ display: "flex" }}>
         {/* Calculator */}
         <Link style={{ textDecoration: "none" }} to="/">
           <HomeItem Img={Calculator} FastText="Calculator" />
@@ -46,6 +46,8 @@ export default function Home() {
         <Link style={{ textDecoration: "none" }} to="/">
           <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
         </Link>
+        </div>
+        <div style={{ display: "flex" }}>
         {/* Stopwatch */}
         <Link style={{ textDecoration: "none" }} to="/">
           <HomeItem Img={Stopwatch} FastText="Stopwatch" ScendText="" />
@@ -66,6 +68,8 @@ export default function Home() {
         <Link style={{ textDecoration: "none" }} to="/">
           <HomeItem Img={internetSpeed} FastText="Internet" ScendText="Speed" />
         </Link>
+        </div>
+        <div style={{ display: "flex" }}>
         {/* Maps */}
         <Link style={{ textDecoration: "none" }} to="/">
           <HomeItem Img={Maps} FastText="Maps" ScendText="" />
