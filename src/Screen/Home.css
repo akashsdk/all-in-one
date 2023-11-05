@@ -7,13 +7,14 @@
 
 
 .HomeItemBody{
-    height: 180px;
+    height: 160px;
     width: 120px;
     border: none;
     margin: 5px;
     padding: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
+    color: #000;
 }
 
 .HomeItemBody:hover{
@@ -24,8 +25,10 @@
     height: 80px;
 }
 .HomeItemText-1{
-    text-decoration: none;
+    margin-top: 10px;
+
 }
+
 .HomeItemText-2{
-    text-decoration: none;
+margin-top: -20px;
 }
