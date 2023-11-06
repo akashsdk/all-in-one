@@ -20,11 +20,22 @@ import Maps from "../Icon/map.png";
 import languageTranslate from "../Icon/translation.png";
 import BMICalculator from "../Icon/bmi.png";
 import BitwiseCalculator from "../Icon/matrix.png";
-import Camera from '../Icon/camera.png';
+import Camera from "../Icon/camera.png";
+import PercentageCalculator from "../Icon/calculator.png";
 
 export default function Home() {
   return (
     <div>
+      <div style={{ display: "flex" }}>
+        {/* Camera */}
+        <Link style={{ textDecoration: "none" }} to="/Camera">
+          <HomeItem Img={Camera} FastText="Camera" ScendText="" />
+        </Link>
+        {/* voice Record */}
+        <Link style={{ textDecoration: "none" }} to="/Voice-Record">
+          <HomeItem Img={voiceRecord} FastText="Voice" ScendText="Record" />
+        </Link>
+      </div>
       <div style={{ display: "flex" }}>
         {/* Calculator */}
         <Link style={{ textDecoration: "none" }} to="/Calculator">
@@ -54,6 +65,14 @@ export default function Home() {
             ScendText="Calculator"
           />
         </Link>
+        {/* Percentage-Calculator */}
+        <Link style={{ textDecoration: "none" }} to="/Percentage-Calculator">
+          <HomeItem
+            Img={PercentageCalculator}
+            FastText="Percentage"
+            ScendText="Calculator"
+          />
+        </Link>
       </div>
       <div style={{ display: "flex" }}>
         {/* Stopwatch */}
@@ -68,14 +87,7 @@ export default function Home() {
         <Link style={{ textDecoration: "none" }} to="/Notepad">
           <HomeItem Img={Notepad} FastText="Notepad" ScendText="" />
         </Link>
-        {/* voice Record */}
-        <Link style={{ textDecoration: "none" }} to="/Voice-Record">
-          <HomeItem Img={voiceRecord} FastText="Voice" ScendText="Record" />
-        </Link>
-        {/* Camera */}
-        <Link style={{ textDecoration: "none" }} to="/Camera">
-          <HomeItem Img={Camera} FastText="Camera" ScendText="" />
-        </Link>
+
         {/* Internet Speed */}
         <Link style={{ textDecoration: "none" }} to="/Internet-Speed">
           <HomeItem Img={internetSpeed} FastText="Internet" ScendText="Speed" />
@@ -94,21 +106,18 @@ export default function Home() {
             ScendText="Translate"
           />
         </Link>
-        
       </div>
 
-
-
       <div style={{ display: "flex" }}>
-      {/* Calendar */}
-      <Link style={{ textDecoration: "none" }} to="/Calendar">
+        {/* Calendar */}
+        <Link style={{ textDecoration: "none" }} to="/Calendar">
           <HomeItem Img={Calendar} FastText="Calendar" ScendText="" />
         </Link>
         {/* rubik's cube */}
         <Link style={{ textDecoration: "none" }} to="/Rubik-Cube">
           <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
         </Link>
-        </div>
+      </div>
     </div>
   );
 }

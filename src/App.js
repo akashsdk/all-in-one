@@ -23,6 +23,7 @@ import LangTranslate from './Component/LangTranslate';
 import BitwiseCalculator from './Component/BitwiseCalculator';
 import BMICalculator from "./Component/BMICalculator";
 import Camera from './Component/Camera';
+import PercentageCalculator from './Component/PercentageCalculator';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/Maps" element={<Maps />} />
           <Route path="/Language-Translate" element={<LangTranslate />} />
           <Route path="/Bitwise-Calculator" element={<BitwiseCalculator />} />
+          <Route path="/Percentage-Calculator" element={<PercentageCalculator />} />
           <Route path="/BMI-Calculator" element={<BMICalculator />} />
           <Route path="/Camera" element={<Camera />} />
         </Routes>
