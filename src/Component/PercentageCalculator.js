@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import "./MainComponent.css";
+import ComponentCart from "../Cart/ComponentCart";
+
+
 
 export default function PercentageCalculator() {
+  
   return (
-    <div>Percentage Calculator</div>
-  )
+    <div>
+      <ComponentCart/>
+    </div>
+  );
 }
