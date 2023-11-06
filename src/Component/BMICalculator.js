@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+
+import ComponentCart from "../Cart/ComponentCart";
 
 export default function BMICalculator() {
   return (
-    <div>BMI Calculator</div>
-  )
+    <div>
+      <ComponentCart
+        mainText=" BMI Calculator"
+        bodyText='Click the "Calculate" button to get the third value.'
+      />
+    </div>
+  );
 }
