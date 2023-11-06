@@ -20,6 +20,9 @@ import VoiceRecord from './Component/VoiceRecord';
 import InternetSpeed from './Component/InternetSpeed';
 import Maps from './Component/Maps';
 import LangTranslate from './Component/LangTranslate';
+import BitwiseCalculator from './Component/BitwiseCalculator';
+import BMICalculator from "./Component/BMICalculator";
+import Camera from './Component/Camera';
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
           <Route path="/Internet-Speed" element={<InternetSpeed />} />
           <Route path="/Maps" element={<Maps />} />
           <Route path="/Language-Translate" element={<LangTranslate />} />
+          <Route path="/Bitwise-Calculator" element={<BitwiseCalculator />} />
+          <Route path="/BMI-Calculator" element={<BMICalculator />} />
+          <Route path="/Camera" element={<Camera />} />
         </Routes>
         <Footer />
       </BrowserRouter>

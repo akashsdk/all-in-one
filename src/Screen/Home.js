@@ -17,11 +17,14 @@ import Notepad from "../Icon/notes.png";
 import voiceRecord from "../Icon/voice.png";
 import internetSpeed from "../Icon/medium.png";
 import Maps from "../Icon/map.png";
-import languageTranslate from '../Icon/translation.png';
+import languageTranslate from "../Icon/translation.png";
+import BMICalculator from "../Icon/bmi.png";
+import BitwiseCalculator from "../Icon/matrix.png";
+import Camera from '../Icon/camera.png';
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <div style={{ display: "flex" }}>
         {/* Calculator */}
         <Link style={{ textDecoration: "none" }} to="/Calculator">
@@ -39,16 +42,20 @@ export default function Home() {
         <Link style={{ textDecoration: "none" }} to="/GPA-Calculator">
           <HomeItem Img={GPACalculator} FastText="GPA" ScendText="Calculator" />
         </Link>
-        {/* Calendar */}
-        <Link style={{ textDecoration: "none" }} to="/Calendar">
-          <HomeItem Img={Calendar} FastText="Calendar" ScendText="" />
+        {/* BMI-Calculator */}
+        <Link style={{ textDecoration: "none" }} to="/BMI-Calculator">
+          <HomeItem Img={BMICalculator} FastText="BMI" ScendText="Calculator" />
         </Link>
-        {/* rubik's cube */}
-        <Link style={{ textDecoration: "none" }} to="/Rubik-Cube">
-          <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
+        {/* Bitwise-Calculator */}
+        <Link style={{ textDecoration: "none" }} to="/Bitwise-Calculator">
+          <HomeItem
+            Img={BitwiseCalculator}
+            FastText="Bitwise"
+            ScendText="Calculator"
+          />
         </Link>
-        </div>
-        <div style={{ display: "flex" }}>
+      </div>
+      <div style={{ display: "flex" }}>
         {/* Stopwatch */}
         <Link style={{ textDecoration: "none" }} to="/Stopwatch">
           <HomeItem Img={Stopwatch} FastText="Stopwatch" ScendText="" />
@@ -65,21 +72,43 @@ export default function Home() {
         <Link style={{ textDecoration: "none" }} to="/Voice-Record">
           <HomeItem Img={voiceRecord} FastText="Voice" ScendText="Record" />
         </Link>
+        {/* Camera */}
+        <Link style={{ textDecoration: "none" }} to="/Camera">
+          <HomeItem Img={Camera} FastText="Camera" ScendText="" />
+        </Link>
         {/* Internet Speed */}
         <Link style={{ textDecoration: "none" }} to="/Internet-Speed">
           <HomeItem Img={internetSpeed} FastText="Internet" ScendText="Speed" />
         </Link>
-        </div>
-        <div style={{ display: "flex" }}>
+      </div>
+      <div style={{ display: "flex" }}>
         {/* Maps */}
         <Link style={{ textDecoration: "none" }} to="/Maps">
           <HomeItem Img={Maps} FastText="Maps" ScendText="" />
         </Link>
-        {/* Maps */}
+        {/* Language-Translate */}
         <Link style={{ textDecoration: "none" }} to="/Language-Translate">
-          <HomeItem Img={languageTranslate} FastText="Language" ScendText="Translate" />
+          <HomeItem
+            Img={languageTranslate}
+            FastText="Language"
+            ScendText="Translate"
+          />
         </Link>
+        
       </div>
+
+
+
+      <div style={{ display: "flex" }}>
+      {/* Calendar */}
+      <Link style={{ textDecoration: "none" }} to="/Calendar">
+          <HomeItem Img={Calendar} FastText="Calendar" ScendText="" />
+        </Link>
+        {/* rubik's cube */}
+        <Link style={{ textDecoration: "none" }} to="/Rubik-Cube">
+          <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
+        </Link>
+        </div>
     </div>
   );
 }
