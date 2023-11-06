@@ -3,7 +3,7 @@ import "./Home.css";
 import HomeItem from "../Cart/HomeItem";
 
 import { SearchOutlined } from "@ant-design/icons";
-import { Button, Flex, Tooltip } from "antd";
+import { Button, Flex, Tooltip, FloatButton } from "antd";
 import { Link } from "react-router-dom";
 
 import Calculator from "../Icon/keys.png";
@@ -118,6 +118,11 @@ export default function Home() {
           <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
         </Link>
       </div>
+
+
+
+
+      <FloatButton.BackTop visibilityHeight={0} />
     </div>
   );
 }
