@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import ComponentCart from "../Cart/ComponentCart";
 
 export default function BitwiseCalculator() {
   return (
-    <div>Bitwise Calculator</div>
-  )
+    <div>
+      <ComponentCart
+        mainText="Bitwise Calculator"
+        bodyText="Perform bitwise and bit shift operations."
+      />
+    </div>
+  );
 }

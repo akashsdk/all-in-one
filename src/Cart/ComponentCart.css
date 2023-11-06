@@ -1,47 +1,46 @@
 .Com-Body {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .Com-Box {
-    margin-top: 50px;
-    width: 90%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .Com-Head-Text {
-    color: rgb(245, 4, 112);
-  }
-  .Com-Body-Text {
-    margin-top: -10px;
-    opacity: 0.6;
-  }
-  
-  .Com-Box-Header {
-    height: 50px;
-    width: 100%;
-    background-color: rgb(56, 244, 181);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  .Com-Box-Header-Icon {
-    margin-left: 30px;
-    border: none;
-    color: rgb(0, 0, 0);
-  }
-  .Com-Box-Header-Text {
-    flex: 1;
-  }
-  .Com-Box-Header-Button {
-    margin-right: 30px;
-    border: none;
-    color: #ed2d2d;
-  }
-  
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Com-Box {
+  margin-top: 50px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.Com-Head-Text {
+  color: rgb(245, 4, 112);
+}
+.Com-Body-Text {
+  margin-top: -10px;
+  opacity: 0.6;
+}
+
+.Com-Box-Header {
+  height: 50px;
+  width: 100%;
+  background-color: rgb(56, 244, 181);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Com-Box-Header-Icon {
+  margin-left: 30px;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+.Com-Box-Header-Text {
+  flex: 1;
+}
+.Com-Box-Header-Button {
+  margin-right: 30px;
+  border: none;
+  color: #ed2d2d;
+}
