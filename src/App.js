@@ -19,6 +19,7 @@ import Notepad from './Component/Notepad';
 import VoiceRecord from './Component/VoiceRecord';
 import InternetSpeed from './Component/InternetSpeed';
 import Maps from './Component/Maps';
+import LangTranslate from './Component/LangTranslate';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/Voice-Record" element={<VoiceRecord />} />
           <Route path="/Internet-Speed" element={<InternetSpeed />} />
           <Route path="/Maps" element={<Maps />} />
+          <Route path="/Language-Translate" element={<LangTranslate />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -17,6 +17,7 @@ import Notepad from "../Icon/notes.png";
 import voiceRecord from "../Icon/voice.png";
 import internetSpeed from "../Icon/medium.png";
 import Maps from "../Icon/map.png";
+import languageTranslate from '../Icon/translation.png';
 
 export default function Home() {
   return (
@@ -73,6 +74,10 @@ export default function Home() {
         {/* Maps */}
         <Link style={{ textDecoration: "none" }} to="/Maps">
           <HomeItem Img={Maps} FastText="Maps" ScendText="" />
+        </Link>
+        {/* Maps */}
+        <Link style={{ textDecoration: "none" }} to="/Language-Translate">
+          <HomeItem Img={languageTranslate} FastText="Language" ScendText="Translate" />
         </Link>
       </div>
     </div>
