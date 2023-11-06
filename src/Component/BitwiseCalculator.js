@@ -9,6 +9,9 @@ export default function BitwiseCalculator() {
         mainText="Bitwise Calculator"
         bodyText="Perform bitwise and bit shift operations."
       />
+      <div className="ComponentBody">
+        dfg
+      </div>
     </div>
   );
 }

@@ -10,6 +10,9 @@ export default function BMICalculator() {
         mainText=" BMI Calculator"
         bodyText='Click the "Calculate" button to get the third value.'
       />
+      <div className="ComponentBody">
+        dfg
+      </div>
     </div>
   );
 }

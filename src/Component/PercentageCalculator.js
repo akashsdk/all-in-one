@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
 
+import { Button, Tooltip } from "antd";
+
 export default function PercentageCalculator() {
-  const [inputValue, setInputValue] = useState();
-  const [percentage, setPercentage] = useState();
+  const [inputValue, setInputValue] = useState("");
+  const [percentage, setPercentage] = useState("");
   const [result, setResult] = useState(0);
 
   const handleInputChange = (e) => {
@@ -21,6 +23,14 @@ export default function PercentageCalculator() {
     const calculatedResult = (inputValue * percentage) / 100;
     setResult(calculatedResult);
   };
+  const clean = () => {
+    setInputValue("");
+    setPercentage("");
+    setResult(0);
+  };
+  const isButtonDisabled = percentage === "" || inputValue === "";
+
+  const text = <span>please! Enter Value</span>;
   return (
     <div>
       <ComponentCart
@@ -29,10 +39,10 @@ export default function PercentageCalculator() {
       to get the third value.'
       />
       <div className="ComponentBody">
-        <div style={{height:'20px'}}/>
-        <div >
-          <h1 style={{color:'rgb(245, 4, 112'}}>Result: {result}</h1>
-          <div style={{marginTop:'50px'}}>
+        <div style={{ height: "20px" }} />
+        <div>
+          <h1 style={{ color: "rgb(245, 4, 112" }}>Result: {result}</h1>
+          <div style={{ marginTop: "50px" }}>
             <label>Enter a value: </label>
             <input
               type="number"
@@ -41,7 +51,7 @@ export default function PercentageCalculator() {
               placeholder="00"
             />
           </div>
-          <div style={{marginTop:'10px'}}>
+          <div style={{ marginTop: "10px" }}>
             <label>Enter percentage: </label>
             <input
               type="number"
@@ -50,9 +60,33 @@ export default function PercentageCalculator() {
               placeholder="%"
             />
           </div>
-          <button style={{marginTop:'30px', marginBottom:'50px'}} onClick={calculatePercentage}>Calculate</button>
           <div>
-            <p></p>
+            <Tooltip placement="topLeft" title={isButtonDisabled ? text : ""}>
+              <Button
+                style={{
+                  marginTop: "30px",
+                  marginBottom: "50px",
+                }}
+                onClick={calculatePercentage}
+                type="primary"
+                disabled={isButtonDisabled}
+              >
+                Calculate
+              </Button>
+            </Tooltip>
+
+            <Button
+              style={{
+                marginTop: "30px",
+                marginBottom: "50px",
+                marginLeft: "20px",
+              }}
+              onClick={clean}
+              type="dashed"
+              danger
+            >
+              Clean
+            </Button>
           </div>
         </div>
       </div>
