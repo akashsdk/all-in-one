@@ -2,8 +2,7 @@ import React from "react";
 import "./Home.css";
 import HomeItem from "../Cart/HomeItem";
 
-import { SearchOutlined } from "@ant-design/icons";
-import { Button, Flex, Tooltip, FloatButton } from "antd";
+import { FloatButton } from "antd";
 import { Link } from "react-router-dom";
 
 import Calculator from "../Icon/keys.png";
@@ -22,6 +21,7 @@ import BMICalculator from "../Icon/bmi.png";
 import BitwiseCalculator from "../Icon/matrix.png";
 import Camera from "../Icon/camera.png";
 import PercentageCalculator from "../Icon/calculator.png";
+import CGPACalculator from "../Icon/education.png";
 
 export default function Home() {
   return (
@@ -52,6 +52,14 @@ export default function Home() {
         {/* GPA Calculator */}
         <Link style={{ textDecoration: "none" }} to="/GPA-Calculator">
           <HomeItem Img={GPACalculator} FastText="GPA" ScendText="Calculator" />
+        </Link>
+        {/* CGPA Calculator */}
+        <Link style={{ textDecoration: "none" }} to="/CGPA-Calculator">
+          <HomeItem
+            Img={CGPACalculator}
+            FastText="CGPA"
+            ScendText="Calculator"
+          />
         </Link>
         {/* BMI-Calculator */}
         <Link style={{ textDecoration: "none" }} to="/BMI-Calculator">
@@ -118,9 +126,6 @@ export default function Home() {
           <HomeItem Img={rubikCube} FastText="Rubik's" ScendText="Cube" />
         </Link>
       </div>
-
-
-
 
       <FloatButton.BackTop visibilityHeight={0} />
     </div>

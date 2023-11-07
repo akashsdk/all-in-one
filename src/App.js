@@ -13,6 +13,7 @@ import SciCalculator from './Component/SciCalculator';
 import Calendars from './Component/Calendars';
 import RubikCube from './Component/RubikCube';
 import GPACalculator from './Component/GPACalculator';
+import CGPACalculator from './Component/CGPACalculator';
 import Stopwatch from './Component/Stopwatch';
 import Timers from './Component/Timers';
 import Notepad from './Component/Notepad';
@@ -40,6 +41,7 @@ function App() {
           <Route path="/Calendar" element={<Calendars />} />
           <Route path="/Rubik-Cube" element={<RubikCube />} />
           <Route path="/GPA-Calculator" element={<GPACalculator />} />
+          <Route path="/CGPA-Calculator" element={<CGPACalculator />} />
           <Route path="/Stopwatch" element={<Stopwatch />} />
           <Route path="/Timers" element={<Timers />} />
           <Route path="/Notepad" element={<Notepad />} />
