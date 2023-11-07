@@ -65,19 +65,22 @@ export default function Home() {
         <Link style={{ textDecoration: "none" }} to="/BMI-Calculator">
           <HomeItem Img={BMICalculator} FastText="BMI" ScendText="Calculator" />
         </Link>
-        {/* Bitwise-Calculator */}
-        <Link style={{ textDecoration: "none" }} to="/Bitwise-Calculator">
-          <HomeItem
-            Img={BitwiseCalculator}
-            FastText="Bitwise"
-            ScendText="Calculator"
-          />
-        </Link>
+
         {/* Percentage-Calculator */}
         <Link style={{ textDecoration: "none" }} to="/Percentage-Calculator">
           <HomeItem
             Img={PercentageCalculator}
             FastText="Percentage"
+            ScendText="Calculator"
+          />
+        </Link>
+      </div>
+      <div style={{ display: "flex" }}>
+        {/* Bitwise-Calculator */}
+        <Link style={{ textDecoration: "none" }} to="/Bitwise-Calculator">
+          <HomeItem
+            Img={BitwiseCalculator}
+            FastText="Bitwise"
             ScendText="Calculator"
           />
         </Link>
