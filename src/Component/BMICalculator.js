@@ -39,7 +39,12 @@ export default function BMICalculator() {
     setValue(e.target.value);
   };
   const twoColors = {
-    "0%": "#108ee9",
+    "0%":"#FFF05A",
+    "18.4%": "#FFE807",
+    "18.5%": "#00FF27",
+    "24.99%": "#00FF27",
+    "25%": "#F83FFE",
+    "30%": "#F83FFE",
     "100%": "rgb(255, 0, 0)",
   };
 
@@ -127,11 +132,10 @@ export default function BMICalculator() {
           </div>
         </div>
         <Progress
-          type="dashboard"
+          type="dashboard" 
           percent={bmi.toFixed(2)}
           strokeColor={twoColors}
         />
-
         <div>
           <h3>Note:</h3>
           <p>0-18.5 is' Underweight'</p>
