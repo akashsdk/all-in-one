@@ -30,6 +30,7 @@ export default function SciCalculator() {
         bodyText="This is an online javascript scientific calculator. You can click the buttons or type to perform calculations as you would on a physical calculator."
       />
       <div className="ComponentBody">
+        <div style={{height:'30px'}}/>
         <div className="scientific-calculator">
           <div className="scientific-input-output">
             <input type="scientific-text" value={input} onChange={handleInputChange} />
@@ -37,31 +38,33 @@ export default function SciCalculator() {
           </div>
           <div className="scientific-buttons">
             <button className="scientific-button" onClick={handleClear}>C</button>
-            <button onClick={handleClear}>AC</button>
-            <button onClick={() => setInput(input + "7")}>7</button>
-            <button onClick={() => setInput(input + "8")}>8</button>
-            <button onClick={() => setInput(input + "9")}>9</button>
-            <button onClick={() => setInput(input + "+")}>+</button>
-            <button onClick={() => setInput(input + "4")}>4</button>
-            <button onClick={() => setInput(input + "5")}>5</button>
-            <button onClick={() => setInput(input + "6")}>6</button>
-            <button onClick={() => setInput(input + "-")}>-</button>
-            <button onClick={() => setInput(input + "1")}>1</button>
-            <button onClick={() => setInput(input + "2")}>2</button>
-            <button onClick={() => setInput(input + "3")}>3</button>
-            <button onClick={() => setInput(input + "*")}>*</button>
-            <button onClick={() => setInput(input + "0")}>0</button>
-            <button onClick={() => setInput(input + ".")}>.</button>
-            <button onClick={() => setInput(input + "()")}>()</button>
-            <button onClick={() => setInput(input + "/")}>/</button>
-            <button onClick={() => setInput(input + "Math.sin(")}>sin</button>
-            <button onClick={() => setInput(input + "Math.cos(")}>cos</button>
-            <button onClick={() => setInput(input + "Math.tan(")}>tan</button>
-            <button onClick={() => setInput(input + "Math.sqrt(")}>√</button>
-            <button onClick={() => setInput(input + "**")}>^</button>
-            <button onClick={handleCalculate}>=</button>
+            <button className="scientific-button" onClick={handleClear}>AC</button>
+            <button className="scientific-button" onClick={() => setInput(input + "7")}>7</button>
+            <button className="scientific-button" onClick={() => setInput(input + "8")}>8</button>
+            <button className="scientific-button" onClick={() => setInput(input + "9")}>9</button>
+            <button className="scientific-button" onClick={() => setInput(input + "+")}>+</button>
+            <button className="scientific-button" onClick={() => setInput(input + "4")}>4</button>
+            <button className="scientific-button" onClick={() => setInput(input + "5")}>5</button>
+            <button className="scientific-button" onClick={() => setInput(input + "6")}>6</button>
+            <button className="scientific-button" onClick={() => setInput(input + "-")}>-</button>
+            <button className="scientific-button" onClick={() => setInput(input + "1")}>1</button>
+            <button className="scientific-button" onClick={() => setInput(input + "2")}>2</button>
+            <button className="scientific-button" onClick={() => setInput(input + "3")}>3</button>
+            <button className="scientific-button" onClick={() => setInput(input + "*")}>*</button>
+            <button className="scientific-button" onClick={() => setInput(input + "0")}>0</button>
+            <button className="scientific-button" onClick={() => setInput(input + ".")}>.</button>
+            <button className="scientific-button" onClick={() => setInput(input + "(")}>(</button>
+            <button className="scientific-button" onClick={() => setInput(input + ")")}>)</button>
+            <button className="scientific-button" onClick={() => setInput(input + "/")}>/</button>
+            <button className="scientific-button" onClick={() => setInput(input + "Math.sin(")}>sin</button>
+            <button className="scientific-button" onClick={() => setInput(input + "Math.cos(")}>cos</button>
+            <button className="scientific-button" onClick={() => setInput(input + "Math.tan(")}>tan</button>
+            <button className="scientific-button" onClick={() => setInput(input + "Math.sqrt(")}>√</button>
+            <button className="scientific-button" onClick={() => setInput(input + "**")}>^</button>
+            <button className="scientific-button2" onClick={handleCalculate}>=</button>
           </div>
         </div>
+        <div style={{height:'30px'}}/>
       </div>
     </div>
   );

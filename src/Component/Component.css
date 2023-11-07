@@ -125,8 +125,12 @@
     width: 80%;
     padding: 5px;
   }
+  .scientific-text{
+    height: 25px;
+  }
   
   .scientific-output {
+    height: 25px;
     width: 20%;
     padding: 5px;
     background-color: #fff;
@@ -144,8 +148,17 @@
   .scientific-button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #bd1212;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .scientific-button2 {
+    width: 100%;
+    padding: 10px;
+    background-color: #12bd1b;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -157,6 +170,9 @@
   
   .scientific-button:hover {
     background-color: #0056b3;
+  }
+  .scientific-button2:hover {
+    background-color: #00b39e;
   }
   
   .scientific-button:focus {
