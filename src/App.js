@@ -10,7 +10,7 @@ import Contact from "./Screen/Contact";
 
 import Calculator from './Component/Calculator';
 import SciCalculator from './Component/SciCalculator';
-import Calendar from './Component/Calendar';
+import Calendars from './Component/Calendars';
 import RubikCube from './Component/RubikCube';
 import GPACalculator from './Component/GPACalculator';
 import Stopwatch from './Component/Stopwatch';
@@ -37,7 +37,7 @@ function App() {
 
           <Route path="/Calculator" element={<Calculator />} />
           <Route path="/Scientific-Calculator" element={<SciCalculator />} />
-          <Route path="/Calendar" element={<Calendar />} />
+          <Route path="/Calendar" element={<Calendars />} />
           <Route path="/Rubik-Cube" element={<RubikCube />} />
           <Route path="/GPA-Calculator" element={<GPACalculator />} />
           <Route path="/Stopwatch" element={<Stopwatch />} />
