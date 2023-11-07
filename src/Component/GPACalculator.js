@@ -3,9 +3,11 @@ import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
 
 import { MinusCircleOutlined } from "@ant-design/icons";
-import { Button } from "antd";
+import { Button, Input, Form } from "antd";
 
 export default function GPACalculator() {
+  const [outputValue, setOutputValue] = useState("");
+  const [outputValue2, setOutputValue2] = useState("");
   const [courses, setCourses] = useState([
     { name: "", grade: "", credits: "" },
   ]);
@@ -40,21 +42,66 @@ export default function GPACalculator() {
 
     const gpaValue = totalPoints / totalCredits;
     setGpa(gpaValue);
+
+    if (gpaValue >= 0 && gpaValue <= 4) {
+      if (gpaValue >= 0 && gpaValue < 2) {
+        setOutputValue("F");
+        setOutputValue2("(<40% Less than 40%)");
+      } else if (gpaValue >= 2 && gpaValue < 2.25) {
+        setOutputValue("D");
+        setOutputValue2("(40% to less than 45%)");
+      } else if (gpaValue >= 2.25 && gpaValue < 2.5) {
+        setOutputValue("C");
+        setOutputValue2("(45% to less than 50%)");
+      } else if (gpaValue >= 2.5 && gpaValue < 2.75) {
+        setOutputValue("C+");
+        setOutputValue2("(50% to less than 55%)");
+      } else if (gpaValue >= 2.75 && gpaValue < 3.0) {
+        setOutputValue("B-");
+        setOutputValue2("(55% to less than 60%)");
+      } else if (gpaValue >= 3.0 && gpaValue < 3.25) {
+        setOutputValue("B");
+        setOutputValue2("(60% to less than 65%)");
+      } else if (gpaValue >= 3.25 && gpaValue < 3.5) {
+        setOutputValue("B+");
+        setOutputValue2("(65% to less than 70%)");
+      } else if (gpaValue >= 3.5 && gpaValue < 3.75) {
+        setOutputValue("A-");
+        setOutputValue2("(70% to less than 75%)");
+      } else if (gpaValue >= 3.75 && gpaValue < 4) {
+        setOutputValue("A");
+        setOutputValue2("(75% to less than 80%)");
+      } else if (gpaValue >= 4) {
+        setOutputValue("A+");
+        setOutputValue2("(80% and above)");
+      }
+    } else {
+      setOutputValue("Error !!");
+      setOutputValue2("Must be CGPA (0<4)");
+    }
   };
 
   const clean = () => {
-    
+    window.location.reload(false);
   };
   return (
     <div>
-      <ComponentCart
-        mainText="GPA Calculator"
-        bodyText="Perform bitwise and bit shift operations."
-      />
+      <ComponentCart mainText="GPA Calculator" bodyText="GPA Calculator." />
+
       <div className="ComponentBody">
         <div style={{ height: "20px" }} />
         <div>
           <h1 style={{ color: "rgb(245, 4, 112" }}>Result: {gpa.toFixed(2)}</h1>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "-30px",
+            }}
+          >
+            <p>{outputValue}</p>
+            <p style={{ marginLeft: "5px", opacity: ".5" }}>{outputValue2}</p>
+          </div>
           {courses.map((course, index) => (
             <div key={index} style={{ marginTop: "10px" }}>
               <input
@@ -90,16 +137,25 @@ export default function GPACalculator() {
             </div>
           ))}
 
-          <div style={{marginTop:'20px'}}>
-            <Button  onClick={addCourse}>Add Course</Button>
-            <Button style={{marginLeft:'10px'}} type="primary" onClick={calculateGpa}>
+          <div style={{ marginTop: "20px" }}>
+            <Button onClick={addCourse}>Add Course</Button>
+            <Button
+              style={{ marginLeft: "10px" }}
+              type="primary"
+              onClick={calculateGpa}
+            >
               Calculate GPA
             </Button>
-            <Button style={{marginLeft:'10px'}} onClick={clean} type="dashed" danger>
-            Clean
+            <Button
+              style={{ marginLeft: "10px" }}
+              onClick={clean}
+              type="dashed"
+              danger
+            >
+              Clean
             </Button>
+            <p></p>
           </div>
-          
         </div>
         <div style={{ height: "30px" }} />
       </div>
