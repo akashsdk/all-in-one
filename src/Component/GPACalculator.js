@@ -42,7 +42,6 @@ export default function GPACalculator() {
     const gpaValue = totalPoints / totalCredits;
     setGpa(gpaValue.toFixed(2));
 
-
     if (gpaValue >= 0 && gpaValue <= 5) {
       if (gpaValue >= 0 && gpaValue < 1) {
         setOutputValue("Marks:");
@@ -76,7 +75,7 @@ export default function GPACalculator() {
     switch (grade) {
       case "A+":
         return 5.0;
-        case "A":
+      case "A":
         return 4.0;
       case "A-":
         return 3.5;
@@ -93,88 +92,70 @@ export default function GPACalculator() {
     }
   };
 
-
-  
-
-
   const clean = () => {
     window.location.reload(false);
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const dataSource = [
     {
-      key: '1',
-      grade: 'A+',
-      class: '80-100',
-      point: '5',
+      key: "1",
+      grade: "A+",
+      class: "80-100",
+      point: "5",
     },
     {
-      key: '2',
-      grade: 'A',
-      class: '70-79',
-      point: '4',
+      key: "2",
+      grade: "A",
+      class: "70-79",
+      point: "4",
     },
     {
-      key: '3',
-      grade: 'A-',
-      class: '60-69',
-      point: '3.5',
+      key: "3",
+      grade: "A-",
+      class: "60-69",
+      point: "3.5",
     },
     {
-      key: '4',
-      grade: 'B',
-      class: '50-59',
-      point: '3',
+      key: "4",
+      grade: "B",
+      class: "50-59",
+      point: "3",
     },
     {
-      key: '5',
-      grade: 'C',
-      class: '40-49',
-      point: '2',
+      key: "5",
+      grade: "C",
+      class: "40-49",
+      point: "2",
     },
     {
-      key: '6',
-      grade: 'D',
-      class: '33-39',
-      point: '1',
+      key: "6",
+      grade: "D",
+      class: "33-39",
+      point: "1",
     },
     {
-      key: '7',
-      grade: 'F',
-      class: '00-33',
-      point: '0',
+      key: "7",
+      grade: "F",
+      class: "00-33",
+      point: "0",
     },
   ];
-  
+
   const columns = [
     {
-      title: 'Letter Grade',
-      dataIndex: 'grade',
-      key: 'grade',
+      title: "Letter Grade",
+      dataIndex: "grade",
+      key: "grade",
     },
     {
-      title: 'Class Interval (%)',
-      dataIndex: 'class',
-      key: 'class',
+      title: "Class Interval (%)",
+      dataIndex: "class",
+      key: "class",
     },
     {
-      title: 'Grade Point',
-      dataIndex: 'point',
-      key: 'point',
+      title: "Grade Point",
+      dataIndex: "point",
+      key: "point",
     },
   ];
 
@@ -196,10 +177,10 @@ export default function GPACalculator() {
               marginTop: "-30px",
             }}
           >
-            <p style={{  opacity: ".5" }}>{outputValue}</p>
+            <p style={{ opacity: ".5" }}>{outputValue}</p>
             <p style={{ marginLeft: "5px", opacity: ".5" }}>{outputValue2}</p>
           </div>
-          
+
           {courses.map((course, index) => (
             <div key={index} style={{ marginTop: "10px" }}>
               <input
@@ -262,11 +243,10 @@ export default function GPACalculator() {
               Clean
             </Button>
           </div>
-          
         </div>
         <div style={{ height: "30px" }} />
         <div>
-        <Table dataSource={dataSource} columns={columns} />
+          <Table dataSource={dataSource} columns={columns} />
         </div>
 
         <div style={{ height: "30px" }} />
