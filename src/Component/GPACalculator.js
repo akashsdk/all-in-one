@@ -3,7 +3,7 @@ import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
 
 import { MinusCircleOutlined } from "@ant-design/icons";
-import { Button, Input, Form } from "antd";
+import { Button} from "antd";
 
 export default function GPACalculator() {
   const [outputValue, setOutputValue] = useState("");
