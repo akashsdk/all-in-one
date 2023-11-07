@@ -6,15 +6,13 @@ import { MinusCircleOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 
 export default function GPACalculator() {
-
-
   const [courses, setCourses] = useState([
-    { name: '', credits: 0, grade: 'A' },
+    { name: "", credits: 0, grade: "A" },
   ]);
   const [gpa, setGpa] = useState(0);
 
   const handleAddCourse = () => {
-    setCourses([...courses, { name: '', credits: 0, grade: 'A' }]);
+    setCourses([...courses, { name: "", credits: 0, grade: "A" }]);
   };
 
   const handleRemoveCourse = (index) => {
@@ -45,21 +43,20 @@ export default function GPACalculator() {
 
   const gradeToPoints = (grade) => {
     switch (grade) {
-      case 'A':
+      case "A":
         return 4.0;
-      case 'B':
+      case "B":
         return 3.0;
-      case 'C':
+      case "C":
         return 2.0;
-      case 'D':
+      case "D":
         return 1.0;
-      case 'F':
+      case "F":
         return 0.0;
       default:
         return 0.0;
     }
   };
-
 
   return (
     <div>
@@ -69,41 +66,48 @@ export default function GPACalculator() {
       />
 
       <div className="ComponentBody">
-      <div>
-      <h1>GPA Calculator</h1>
-      {courses.map((course, index) => (
-        <div key={index}>
-          <input
-            type="text"
-            placeholder="Course Name"
-            value={course.name}
-            onChange={(e) => handleCourseChange(index, 'name', e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Credits"
-            value={course.credits}
-            onChange={(e) => handleCourseChange(index, 'credits', e.target.value)}
-          />
-          <select
-            value={course.grade}
-            onChange={(e) => handleCourseChange(index, 'grade', e.target.value)}
-          >
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="F">F</option>
-          </select>
-          <button onClick={() => handleRemoveCourse(index)}>Remove</button>
+        <div style={{ height: "20px" }} />
+        <div>
+          <h1>GPA Calculator</h1>
+          {courses.map((course, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                placeholder="Course Name"
+                value={course.name}
+                onChange={(e) =>
+                  handleCourseChange(index, "name", e.target.value)
+                }
+              />
+              <input
+                type="number"
+                placeholder="Credits"
+                value={course.credits}
+                onChange={(e) =>
+                  handleCourseChange(index, "credits", e.target.value)
+                }
+              />
+              <select
+                value={course.grade}
+                onChange={(e) =>
+                  handleCourseChange(index, "grade", e.target.value)
+                }
+              >
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+              </select>
+              <button onClick={() => handleRemoveCourse(index)}>Remove</button>
+            </div>
+          ))}
+          <button onClick={handleAddCourse}>Add Course</button>
+          <button onClick={calculateGpa}>Calculate GPA</button>
+          <div>
+            <p>Your GPA is: {gpa}</p>
+          </div>
         </div>
-      ))}
-      <button onClick={handleAddCourse}>Add Course</button>
-      <button onClick={calculateGpa}>Calculate GPA</button>
-      <div>
-        <p>Your GPA is: {gpa}</p>
-      </div>
-    </div>
       </div>
     </div>
   );
