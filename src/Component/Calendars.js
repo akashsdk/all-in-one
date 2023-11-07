@@ -1,5 +1,5 @@
-import React from 'react'
-import './Component.css';
+import React from "react";
+import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
 
 import { Calendar, theme } from "antd";
@@ -16,23 +16,20 @@ export default function Calendars() {
   };
   return (
     <div>
-      <ComponentCart
-        mainText="Calendars"
-        bodyText=""
-      />
+      <ComponentCart mainText="Calendars" bodyText="" />
       <div className="ComponentBody">
-      <div className="calendarBody">
-      <div style={{height:'30px'}}/>
-      <p className="calendarPtext">Calendar</p>
-      <div className="calendarLine" />
-      <div className="calendarBox">
-        <div style={wrapperStyle}>
-          <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+        <div className="calendarBody">
+          <div style={{ height: "30px" }} />
+          <p className="calendarPtext">Calendar</p>
+          <div className="calendarLine" />
+          <div className="calendarBox">
+            <div style={wrapperStyle}>
+              <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+            </div>
+          </div>
+          <div style={{ height: "30px" }} />
         </div>
       </div>
-      <div style={{height:'30px'}}/>
     </div>
-      </div>
-    </div>
-  )
+  );
 }
