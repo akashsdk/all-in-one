@@ -102,3 +102,64 @@
     border: none;
     margin-left: -10px;
 }
+
+/* Scientific Calculator */
+.scientific-calculator {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .scientific-input-output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .scientific-input {
+    width: 80%;
+    padding: 5px;
+  }
+  
+  .scientific-output {
+    width: 20%;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .scientific-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .scientific-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .scientific-button:active {
+    background-color: #0056b3;
+  }
+  
+  .scientific-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .scientific-button:focus {
+    outline: none;
+  }
+  
