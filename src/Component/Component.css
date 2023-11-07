@@ -91,15 +91,14 @@
 
 
 /* GPACalculator */
-.gpaBody{
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.GPA-Input{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid aqua;
+    margin-right: 10px;
 }
-.gpaH2Text{
-    margin-top: -10px;
-    margin-left: -70%;
+.GPA-Button{
+    color: #ef0d0d;
+    border: none;
+    margin-left: -10px;
 }
