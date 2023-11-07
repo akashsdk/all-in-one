@@ -43,8 +43,12 @@ export default function GPACalculator() {
 
   const gradeToPoints = (grade) => {
     switch (grade) {
-      case "A":
+      case "A+":
+        return 5.0;
+        case "A":
         return 4.0;
+      case "A-":
+        return 3.5;
       case "B":
         return 3.0;
       case "C":
@@ -58,6 +62,11 @@ export default function GPACalculator() {
     }
   };
 
+
+  const clean = () => {
+    window.location.reload(false);
+  };
+
   return (
     <div>
       <ComponentCart
@@ -68,10 +77,11 @@ export default function GPACalculator() {
       <div className="ComponentBody">
         <div style={{ height: "20px" }} />
         <div>
-          <h1>GPA Calculator</h1>
+          <h1 style={{ color: "rgb(245, 4, 112" }}>Result: {gpa}</h1>
           {courses.map((course, index) => (
-            <div key={index}>
+            <div key={index} style={{ marginTop: "10px" }}>
               <input
+                className="GPA-Input"
                 type="text"
                 placeholder="Course Name"
                 value={course.name}
@@ -80,6 +90,7 @@ export default function GPACalculator() {
                 }
               />
               <input
+                className="GPA-Input"
                 type="number"
                 placeholder="Credits"
                 value={course.credits}
@@ -88,26 +99,50 @@ export default function GPACalculator() {
                 }
               />
               <select
+                className="GPA-Input"
                 value={course.grade}
                 onChange={(e) =>
                   handleCourseChange(index, "grade", e.target.value)
                 }
               >
+                <option value="A+">A+</option>
                 <option value="A">A</option>
+                <option value="A-">A-</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
                 <option value="D">D</option>
                 <option value="F">F</option>
               </select>
-              <button onClick={() => handleRemoveCourse(index)}>Remove</button>
+              <Button
+                className="GPA-Button"
+                shape="circle"
+                onClick={() => handleRemoveCourse(index)}
+                icon={<MinusCircleOutlined />}
+              />
             </div>
           ))}
-          <button onClick={handleAddCourse}>Add Course</button>
-          <button onClick={calculateGpa}>Calculate GPA</button>
-          <div>
-            <p>Your GPA is: {gpa}</p>
+
+          <div style={{ marginTop: "20px" }}>
+            <Button onClick={handleAddCourse}>Add Course</Button>
+            <Button
+              style={{ marginLeft: "10px" }}
+              type="primary"
+              onClick={calculateGpa}
+            >
+              Calculate GPA
+            </Button>
+            <Button
+              style={{ marginLeft: "10px" }}
+              onClick={clean}
+              type="dashed"
+              danger
+            >
+              Clean
+            </Button>
           </div>
+          
         </div>
+        <div style={{ height: "30px" }} />
       </div>
     </div>
   );

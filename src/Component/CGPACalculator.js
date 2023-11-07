@@ -154,7 +154,6 @@ export default function CGPACalculator() {
             >
               Clean
             </Button>
-            <p></p>
           </div>
         </div>
         <div style={{ height: "30px" }} />
