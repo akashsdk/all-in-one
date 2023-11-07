@@ -3,9 +3,11 @@ import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
 
 import { MinusCircleOutlined } from "@ant-design/icons";
-import { Button } from "antd";
+import { Button, Table } from "antd";
 
 export default function GPACalculator() {
+  const [outputValue, setOutputValue] = useState("");
+  const [outputValue2, setOutputValue2] = useState("");
   const [courses, setCourses] = useState([
     { name: "", credits: 0, grade: "A" },
   ]);
@@ -39,6 +41,35 @@ export default function GPACalculator() {
 
     const gpaValue = totalPoints / totalCredits;
     setGpa(gpaValue.toFixed(2));
+
+
+    if (gpaValue >= 0 && gpaValue <= 5) {
+      if (gpaValue >= 0 && gpaValue < 1) {
+        setOutputValue("Marks:");
+        setOutputValue2("(00-32)");
+      } else if (gpaValue >= 1 && gpaValue < 2) {
+        setOutputValue("Marks");
+        setOutputValue2("(33-39)");
+      } else if (gpaValue >= 2 && gpaValue < 3) {
+        setOutputValue("Marks");
+        setOutputValue2("(40-49)");
+      } else if (gpaValue >= 3 && gpaValue < 3.5) {
+        setOutputValue("Marks");
+        setOutputValue2("(50-59)");
+      } else if (gpaValue >= 3.5 && gpaValue < 4) {
+        setOutputValue("Marks");
+        setOutputValue2("(60-69)");
+      } else if (gpaValue >= 4 && gpaValue < 5) {
+        setOutputValue("Marks");
+        setOutputValue2("(70-79)");
+      } else if (gpaValue >= 5) {
+        setOutputValue("Marks");
+        setOutputValue2("(80-100)");
+      }
+    } else {
+      setOutputValue("Error !!");
+      setOutputValue2("Must be CGPA (0<4)");
+    }
   };
 
   const gradeToPoints = (grade) => {
@@ -63,9 +94,89 @@ export default function GPACalculator() {
   };
 
 
+  
+
+
   const clean = () => {
     window.location.reload(false);
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const dataSource = [
+    {
+      key: '1',
+      grade: 'A+',
+      class: '80-100',
+      point: '5',
+    },
+    {
+      key: '2',
+      grade: 'A',
+      class: '70-79',
+      point: '4',
+    },
+    {
+      key: '3',
+      grade: 'A-',
+      class: '60-69',
+      point: '3.5',
+    },
+    {
+      key: '4',
+      grade: 'B',
+      class: '50-59',
+      point: '3',
+    },
+    {
+      key: '5',
+      grade: 'C',
+      class: '40-49',
+      point: '2',
+    },
+    {
+      key: '6',
+      grade: 'D',
+      class: '33-39',
+      point: '1',
+    },
+    {
+      key: '7',
+      grade: 'F',
+      class: '00-33',
+      point: '0',
+    },
+  ];
+  
+  const columns = [
+    {
+      title: 'Letter Grade',
+      dataIndex: 'grade',
+      key: 'grade',
+    },
+    {
+      title: 'Class Interval (%)',
+      dataIndex: 'class',
+      key: 'class',
+    },
+    {
+      title: 'Grade Point',
+      dataIndex: 'point',
+      key: 'point',
+    },
+  ];
 
   return (
     <div>
@@ -78,6 +189,17 @@ export default function GPACalculator() {
         <div style={{ height: "20px" }} />
         <div>
           <h1 style={{ color: "rgb(245, 4, 112" }}>Result: {gpa}</h1>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "-30px",
+            }}
+          >
+            <p style={{  opacity: ".5" }}>{outputValue}</p>
+            <p style={{ marginLeft: "5px", opacity: ".5" }}>{outputValue2}</p>
+          </div>
+          
           {courses.map((course, index) => (
             <div key={index} style={{ marginTop: "10px" }}>
               <input
@@ -142,6 +264,11 @@ export default function GPACalculator() {
           </div>
           
         </div>
+        <div style={{ height: "30px" }} />
+        <div>
+        <Table dataSource={dataSource} columns={columns} />
+        </div>
+
         <div style={{ height: "30px" }} />
       </div>
     </div>
