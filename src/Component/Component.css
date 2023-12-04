@@ -181,3 +181,33 @@
   
 
   /* Stopwatch */
+
+  .stopwatch {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .timer {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .stop-controls-button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .stop-controls-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .stop-controls-button:focus {
+    outline: none;
+  }
+  
