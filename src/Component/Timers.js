@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
-import { Button, InputNumber } from "antd";
+import { Button, Input, Progress } from "antd";
 import ClockCircleOutlined from "@ant-design/icons/ClockCircleOutlined";
 
 export default function Timers() {
@@ -9,6 +9,18 @@ export default function Timers() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
+
+  const handleInput1Change = (e) => {
+    setHours(e.target.value);
+  };
+
+  const handleInput2Change = (e) => {
+    setMinutes(e.target.value);
+  };
+
+  const handleInput3Change = (e) => {
+    setSeconds(e.target.value);
+  };
 
   useEffect(() => {
     let totalSeconds = hours * 3600 + minutes * 60 + seconds;
@@ -43,7 +55,13 @@ export default function Timers() {
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    setIsActive(!isActive);
+    setIsActive(false);
+  };
+
+  const twoColors = {
+    "0%": "red",
+    "50%": "#ffd000",
+    "100%": "green",
   };
   return (
     <div>
@@ -61,29 +79,30 @@ export default function Timers() {
             }}
           >
             <p className="timers-text"> Hours: </p>
-            <InputNumber
+            <Input
               status="error"
               className="timers-input"
               prefix={<ClockCircleOutlined />}
-              
-            />
-            <input
-              type="number"
-              placeholder="Hours"
               value={hours}
-              onChange={(e) => setHours(parseInt(e.target.value))}
+              onChange={handleInput1Change}
             />
-            <input
-              type="number"
-              placeholder="Minutes"
+
+            <p className="timers-text-2"> Minutes: </p>
+            <Input
+              status="error"
+              className="timers-input"
+              prefix={<ClockCircleOutlined />}
               value={minutes}
-              onChange={(e) => setMinutes(parseInt(e.target.value))}
+              onChange={handleInput2Change}
             />
-            <input
-              type="number"
-              placeholder="Seconds"
+
+            <p className="timers-text-2"> Seconds: </p>
+            <Input
+              status="error"
+              className="timers-input"
+              prefix={<ClockCircleOutlined />}
               value={seconds}
-              onChange={(e) => setSeconds(parseInt(e.target.value))}
+              onChange={handleInput3Change}
             />
           </div>
           <div>
@@ -117,7 +136,11 @@ export default function Timers() {
             </Button>
           </div>
         </div>
-
+        <Progress
+          percent={99.9}
+          strokeColor={twoColors}
+          style={{ width: "300px" }}
+        />
         <div style={{ height: "50px" }} />
       </div>
     </div>

@@ -207,9 +207,16 @@
     opacity: .5;
   }
 
+  .timers-text-2{
+    font-size: 30px;
+    opacity: .5;
+    margin-top: -0px;
+  }
+
   .timers-input{
     width: 250px;
     margin-top: -25px;
+    
   }
   
   
