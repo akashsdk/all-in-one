@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
 
@@ -36,22 +36,30 @@ export default function Stopwatch() {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
-    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    return `${minutes < 10 ? "0" : ""}${minutes}:${
+      seconds < 10 ? "0" : ""
+    }${seconds}`;
   };
 
   return (
     <div>
       <ComponentCart mainText="Stopwatch" bodyText="Stopwatch" />
       <div className="ComponentBody">
-      <div className="stopwatch">
-      <h1>Stopwatch</h1>
-      <div className="timer">{formatTime(timer)}</div>
-      <div className="controls">
-        <button className='stop-controls-button' onClick={handleStart}>Start</button>
-        <button className='stop-controls-button' onClick={handleStop}>Stop</button>
-        <button className='stop-controls-button' onClick={handleReset}>Reset</button>
-      </div>
-    </div>
+        <div className="stopwatch">
+          <h1>Stopwatch</h1>
+          <div className="timer">{formatTime(timer)}</div>
+          <div className="controls">
+            <button className="stop-controls-button" onClick={handleStart}>
+              Start
+            </button>
+            <button className="stop-controls-button" onClick={handleStop}>
+              Stop
+            </button>
+            <button className="stop-controls-button" onClick={handleReset}>
+              Reset
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
