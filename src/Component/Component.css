@@ -187,28 +187,16 @@
     margin-top: 10px;
 
   }
+  .stopwatch-timer-1 {
+    font-size: 1em;
+    margin-bottom: 20px;
+    opacity: .5;
+  }
   
   .stopwatch-timer {
     font-size: 3em;
     margin-bottom: 20px;
+    margin-top: -20px;
   }
   
-  .stop-controls-button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .stop-controls-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .stop-controls-button:focus {
-    outline: none;
-  }
   

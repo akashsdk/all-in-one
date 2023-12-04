@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
+import { Button } from "antd";
 
 export default function Stopwatch() {
   // state to store time
@@ -48,18 +49,29 @@ export default function Stopwatch() {
           <div style={{ height: "20px" }} />
 
           <div className="stopwatch-container">
+            <p className="stopwatch-timer-1">Hours : Minutes : Seconds : Milliseconds</p>
             <p className="stopwatch-timer">
               {hours}:{minutes.toString().padStart(2, "0")}:
               {seconds.toString().padStart(2, "0")}:
               {milliseconds.toString().padStart(2, "0")}
             </p>
             <div className="stopwatch-buttons">
-              <button className="stop-controls-button" onClick={startAndStop}>
-                {isRunning ? "Stop" : "Start"}
-              </button>
-              <button className="stop-controls-button" onClick={reset}>
+              <Button
+                onClick={startAndStop}
+                size="large"
+                type={isRunning ? "dashed" : "primary"}
+                style={{
+                  color: isRunning ? "red" : "",
+                  borderColor: isRunning ? "red" : "",
+                  marginRight:'30px',
+                }}
+              >
+                {" "}
+                {isRunning ? "Stop" : "Start"}{" "}
+              </Button>
+              <Button onClick={reset} size="large" type="primary" danger>
                 Reset
-              </button>
+              </Button>
             </div>
           </div>
 
