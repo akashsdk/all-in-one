@@ -1,56 +1,125 @@
 import React, { useState, useEffect } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
-import { Button } from "antd";
+import { Button, InputNumber } from "antd";
+import ClockCircleOutlined from "@ant-design/icons/ClockCircleOutlined";
 
 export default function Timers() {
-
-
-  const [time, setTime] = useState(600); // Initial time in seconds (e.g., 10 minutes = 600 seconds)
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    let totalSeconds = hours * 3600 + minutes * 60 + seconds;
     let intervalId;
 
-    if (isActive && time > 0) {
+    if (isActive && totalSeconds > 0) {
       intervalId = setInterval(() => {
-        setTime((prevTime) => prevTime - 1);
+        totalSeconds--;
+        if (totalSeconds <= 0) {
+          clearInterval(intervalId);
+        }
+        setHours(Math.floor(totalSeconds / 3600));
+        setMinutes(Math.floor((totalSeconds % 3600) / 60));
+        setSeconds(totalSeconds % 60);
       }, 1000); // Update every 1 second (1000 milliseconds)
     } else {
       clearInterval(intervalId);
     }
 
     return () => clearInterval(intervalId);
-  }, [isActive, time]);
+  }, [isActive, hours, minutes, seconds]);
 
   const toggleTimer = () => {
     setIsActive(!isActive);
   };
 
-  const formatTime = (timeInSeconds) => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  const formatTime = (value) => {
+    return value < 10 ? `0${value}` : value;
   };
 
+  const reset = () => {
+    setHours(0);
+    setMinutes(0);
+    setSeconds(0);
+    setIsActive(!isActive);
+  };
   return (
     <div>
-      <ComponentCart
-        mainText="Timers"
-        bodyText="Timers..."
-      />
+      <ComponentCart mainText="Countdown Timer" bodyText="Timers..." />
       <div className="ComponentBody">
-      <div>
-      <h1>Countdown Timer</h1>
-      <div>
-        <p>Time remaining: {formatTime(time)}</p>
-      </div>
-      <div>
-        <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
-        <button onClick={() => setTime(600)}>Reset</button> {/* Reset time to initial value */}
+        <div>
+          <div style={{ height: "20px" }} />
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <p className="timers-text"> Hours: </p>
+            <InputNumber
+              status="error"
+              className="timers-input"
+              prefix={<ClockCircleOutlined />}
+              
+            />
+            <input
+              type="number"
+              placeholder="Hours"
+              value={hours}
+              onChange={(e) => setHours(parseInt(e.target.value))}
+            />
+            <input
+              type="number"
+              placeholder="Minutes"
+              value={minutes}
+              onChange={(e) => setMinutes(parseInt(e.target.value))}
+            />
+            <input
+              type="number"
+              placeholder="Seconds"
+              value={seconds}
+              onChange={(e) => setSeconds(parseInt(e.target.value))}
+            />
+          </div>
+          <div>
+            <p className="stopwatch-timer-1">Time remaining:</p>
+            <p className="stopwatch-timer">
+              {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
+            </p>
+
+            {isActive && (hours !== 0 || minutes !== 0 || seconds !== 0) ? (
+              <p> working...</p>
+            ) : (
+              <p>Set new value</p>
+            )}
+          </div>
+          <div>
+            <Button
+              onClick={toggleTimer}
+              size="large"
+              type={isActive ? "dashed" : "primary"}
+              style={{
+                color: isActive ? "red" : "",
+                borderColor: isActive ? "red" : "",
+                marginRight: "30px",
+              }}
+            >
+              {" "}
+              {isActive ? "Stop" : "Start"}{" "}
+            </Button>
+            <Button onClick={reset} size="large" type="primary" danger>
+              Reset
+            </Button>
+          </div>
+        </div>
+
+        <div style={{ height: "50px" }} />
       </div>
     </div>
-      </div>
-    </div>
-  )
+  );
 }

@@ -202,6 +202,14 @@
 
   /* Timers */
 
-  
+  .timers-text{
+    font-size: 30px;
+    opacity: .5;
+  }
+
+  .timers-input{
+    width: 250px;
+    margin-top: -25px;
+  }
   
   
