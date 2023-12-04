@@ -47,9 +47,9 @@ export default function Stopwatch() {
       <h1>Stopwatch</h1>
       <div className="timer">{formatTime(timer)}</div>
       <div className="controls">
-        <button onClick={handleStart}>Start</button>
-        <button onClick={handleStop}>Stop</button>
-        <button onClick={handleReset}>Reset</button>
+        <button className='stop-controls-button' onClick={handleStart}>Start</button>
+        <button className='stop-controls-button' onClick={handleStop}>Stop</button>
+        <button className='stop-controls-button' onClick={handleReset}>Reset</button>
       </div>
     </div>
       </div>
