@@ -63,6 +63,38 @@ export default function Timers() {
     "50%": "#ffd000",
     "100%": "green",
   };
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const [percentage, setPercentage] = useState(100);
+  const [timer, setTimer] = useState(100);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (timer > 0) {
+        setTimer((prevTimer) => prevTimer - 1);
+        setPercentage((prevPercentage) => prevPercentage - (1 / 100));
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000); // Decrease every 1 second (1000 milliseconds)
+
+    return () => clearInterval(interval);
+  }, [timer]);
+
+
   return (
     <div>
       <ComponentCart mainText="Countdown Timer" bodyText="Timers..." />
@@ -141,6 +173,17 @@ export default function Timers() {
           strokeColor={twoColors}
           style={{ width: "300px" }}
         />
+
+
+
+
+
+
+
+<div>
+        <p>Timer: {timer}s</p>
+        <p>Percentage: {percentage.toFixed(2)}%</p>
+      </div>
         <div style={{ height: "50px" }} />
       </div>
     </div>
