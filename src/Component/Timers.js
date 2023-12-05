@@ -64,22 +64,6 @@ export default function Timers() {
     "100%": "green",
   };
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
   return (
     <div>
       <ComponentCart mainText="Countdown Timer" bodyText="Timers..." />
