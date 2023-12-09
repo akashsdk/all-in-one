@@ -6,6 +6,7 @@ import { DownloadOutlined } from "@ant-design/icons";
 
 export default function Notepad() {
   const [text, setText] = useState("");
+  const [text2, setText2] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -16,12 +17,15 @@ export default function Notepad() {
     setIsModalOpen(false);
   };
 
-  // Function to handle text change
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
+  const handleTextChange2 = (event) => {
+    const inputValue = event.target.value;
 
-  // Function to handle download button click
+    setText2(inputValue);
+  };
+
   const handleDownload = () => {
     if (text.trim() === "") {
       messageApi.open({
@@ -31,19 +35,16 @@ export default function Notepad() {
       });
       return;
     }
-
-    // Create a blob with the text content
-    const blob = new Blob([text], { type: "text/plain" });
+    const formattedText = 'Header: <span style="font-weight: bold; font-size: 20px;">${text2}</span>] <br/> [Body: <span style="font-size: 16px;">${text}</span>';
+    const blob = new Blob([formattedText], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
 
-    // Create a temporary <a> element to trigger the download
     const a = document.createElement("a");
     a.href = url;
     a.download = "notepad_text.txt";
     document.body.appendChild(a);
     a.click();
 
-    // Clean up by removing the temporary <a> and revoking the URL object
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
@@ -53,7 +54,6 @@ export default function Notepad() {
     });
   };
 
-  // Function to handle clean button click
   const handleClean = () => {
     setIsModalOpen(false);
     setText("");
@@ -68,7 +68,14 @@ export default function Notepad() {
       <ComponentCart mainText="Notepad" bodyText="Notepad..." />
       <div className="ComponentBody">
         <div>
-          <h1>Notepad</h1>
+        <div style={{height:'1px'}} />
+          <h1> Write your notes below </h1>
+          <input 
+          type="text"
+          style={{ fontWeight: 'bold' }}
+          value={text2}
+          onChange={handleTextChange2}
+          placeholder="hjjjj"/>
           <textarea
           className="notepad-textarea"
             value={text}
