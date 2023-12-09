@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
-import { Button, message } from "antd";
+import { Button, message, Modal } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 
 export default function Notepad() {
   const [text, setText] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   // Function to handle text change
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
-  const warning = () => {
-    messageApi.open({
-      type: "warning",
-      content: "The Notepad is empty. Please add some text before downloading.",
-    });
-  };
   // Function to handle download button click
   const handleDownload = () => {
     if (text.trim() === "") {
       messageApi.open({
         type: "warning",
         content:
-          "The Notepad is empty. Please add some text before downloading.",
+          "The Notepad is empty. Please add some text before downloading!",
       });
       return;
     }
@@ -44,11 +46,21 @@ export default function Notepad() {
     // Clean up by removing the temporary <a> and revoking the URL object
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+
+    messageApi.open({
+      type: "success",
+      content: "Successfully Downloaded.",
+    });
   };
 
   // Function to handle clean button click
   const handleClean = () => {
+    setIsModalOpen(false);
     setText("");
+    messageApi.open({
+      type: "success",
+      content: "Cleaned!!",
+    });
   };
   return (
     <div>
@@ -77,10 +89,16 @@ export default function Notepad() {
             >
               Download
             </Button>
-            <Button onClick={handleClean} size="large" type="primary" danger>
+            <Button onClick={showModal} size="large" type="primary" danger>
               Clean
             </Button>
-            <Button onClick={warning}>Warning</Button>
+
+            <Modal
+              title="Do you want to clean? Press 'OK' "
+              open={isModalOpen}
+              onOk={handleClean}
+              onCancel={handleCancel}
+            ></Modal>
           </div>
         </div>
       </div>
