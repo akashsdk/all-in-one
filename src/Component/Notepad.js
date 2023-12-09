@@ -1,7 +1,59 @@
-import React from 'react'
+import React, {useState} from 'react'
+import './Component.css';
+import ComponentCart from "../Cart/ComponentCart";
+
 
 export default function Notepad() {
+
+  const [text, setText] = useState('');
+
+  // Function to handle text change
+  const handleTextChange = (event) => {
+    setText(event.target.value);
+  };
+
+  // Function to handle download button click
+  const handleDownload = () => {
+    if (text.trim() === '') {
+      alert('The Notepad is empty. Please add some text before downloading.');
+      return;
+    }
+
+    // Create a blob with the text content
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+
+    // Create a temporary <a> element to trigger the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'notepad_text.txt';
+    document.body.appendChild(a);
+    a.click();
+
+    // Clean up by removing the temporary <a> and revoking the URL object
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  // Function to handle clean button click
+  const handleClean = () => {
+    setText('');
+  };
   return (
-    <div>Notepad</div>
+    <div>
+      <ComponentCart
+        mainText="Notepad"
+        bodyText="Notepad..."
+      />
+      <div className="ComponentBody">
+      <div>
+      <h1>Notepad</h1>
+      <textarea value={text} onChange={handleTextChange} rows={10} cols={50} />
+      <br />
+      <button onClick={handleDownload}>Download</button>
+      <button onClick={handleClean}>Clean</button>
+    </div>
+      </div>
+    </div>
   )
 }
