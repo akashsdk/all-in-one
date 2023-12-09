@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
+import { Button, message, } from "antd";
+import { DownloadOutlined } from '@ant-design/icons';
 
 export default function Notepad() {
   const [text, setText] = useState("");
@@ -50,8 +52,23 @@ export default function Notepad() {
             cols={50}
           />
           <br />
-          <button onClick={handleDownload}>Download</button>
-          <button onClick={handleClean}>Clean</button>
+
+          <div>
+            <Button
+              onClick={handleDownload}
+              type= "primary"
+              size="large"
+              style={{
+                marginRight: "30px",
+              }}
+              icon={<DownloadOutlined />}
+            >
+              Download
+            </Button>
+            <Button onClick={handleClean} size="large" type="primary" danger>
+            Clean
+            </Button>
+          </div>
         </div>
       </div>
     </div>
