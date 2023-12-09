@@ -35,7 +35,11 @@ export default function Notepad() {
       });
       return;
     }
-    const formattedText = 'Header: <span style="font-weight: bold; font-size: 20px;">${text2}</span>] <br/> [Body: <span style="font-size: 16px;">${text}</span>';
+
+    const formattedHeader = `<span style="font-weight: bold; font-size: 20px;">${text2}</span>`;
+    const formattedBody = `<span style="font-size: 16px;">${text}</span>`;
+    const formattedText = `Header: ${formattedHeader} <br/> Body: ${formattedBody}`;
+
     const blob = new Blob([formattedText], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
 
