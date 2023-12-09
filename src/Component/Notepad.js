@@ -70,13 +70,14 @@ export default function Notepad() {
         <div>
           <h1>Notepad</h1>
           <textarea
+          className="notepad-textarea"
             value={text}
             onChange={handleTextChange}
             rows={10}
             cols={50}
           />
           <br />
-
+          <div style={{height:'30px'}} />
           <div>
             <Button
               onClick={handleDownload}
@@ -100,6 +101,7 @@ export default function Notepad() {
               onCancel={handleCancel}
             ></Modal>
           </div>
+          <div style={{height:'30px'}} />
         </div>
       </div>
     </div>

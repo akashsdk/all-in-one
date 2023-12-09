@@ -1,225 +1,226 @@
-.ComponentBody{
-    height: auto;
-    width: 90%;
-    margin-left: 5%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 20px;
-    margin-bottom: 30px;
+.ComponentBody {
+  height: auto;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 /* Calculator */
 
 .CalculatorButton {
-    width: 3em;
-    height: 3em;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 2em;
-    margin: 0.3em;
+  width: 3em;
+  height: 3em;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 2em;
+  margin: 0.3em;
 }
 
 .CalculatorButton:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .wrapper {
-    background-color: black;
-    padding: 1em;
-    border-radius: 10px;
+  background-color: black;
+  padding: 1em;
+  border-radius: 10px;
 }
 
 .orange {
-    background-color: #FF9500;
-    color: white;
-    width: 3em;
-    height: 3em;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 2em;
-    margin: 0.3em;
+  background-color: #ff9500;
+  color: white;
+  width: 3em;
+  height: 3em;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 2em;
+  margin: 0.3em;
 }
 
 .grey {
-    background-color: #505050;
-    color: white;
-    width: 3em;
-    height: 3em;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 2em;
-    margin: 0.3em;
+  background-color: #505050;
+  color: white;
+  width: 3em;
+  height: 3em;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 2em;
+  margin: 0.3em;
 }
 .grey1 {
-    background-color: #505050;
-    color: white;
-    width: 4.1cm;
+  background-color: #505050;
+  color: white;
+  width: 4.1cm;
 }
 
 .resultado {
-    color: white;
-    display: flex;
-    justify-content: flex-end; /* Ou 'right' = o resultado seria o mesmo */
-    margin-right: 1em;
-    font-size: 3.5em;
+  color: white;
+  display: flex;
+  justify-content: flex-end; /* Ou 'right' = o resultado seria o mesmo */
+  margin-right: 1em;
+  font-size: 3.5em;
 }
 
 /* Calendars */
 
-.calendarBody{
-    height: auto;
+.calendarBody {
+  height: auto;
 }
-.calendarPtext{
-    font-size: 30px;
-    margin-top: 15px;
-    color: rgb(69, 69, 248);
+.calendarPtext {
+  font-size: 30px;
+  margin-top: 15px;
+  color: rgb(69, 69, 248);
 }
-.calendarLine{
-    height: 1px;
-    width: 90%;
-    margin-left: 5%;
-    background-color: rgb(96, 96, 96);
-    opacity: .6;
-    margin-top: -20px;
+.calendarLine {
+  height: 1px;
+  width: 90%;
+  margin-left: 5%;
+  background-color: rgb(96, 96, 96);
+  opacity: 0.6;
+  margin-top: -20px;
 }
-.calendarBox{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+.calendarBox {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
-
 
 /* CGPA and GPA Calculator */
-.GPA-Input{
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid aqua;
-    margin-right: 10px;
+.GPA-Input {
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid aqua;
+  margin-right: 10px;
 }
-.GPA-Button{
-    color: #ef0d0d;
-    border: none;
-    margin-left: -10px;
+.GPA-Button {
+  color: #ef0d0d;
+  border: none;
+  margin-left: -10px;
 }
 
 /* Scientific Calculator */
 .scientific-calculator {
-    width: 300px;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    background-color: #f5f5f5;
-  }
-  
-  .scientific-input-output {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .scientific-input {
-    width: 80%;
-    padding: 5px;
-  }
-  .scientific-text{
-    height: 25px;
-  }
-  
-  .scientific-output {
-    height: 25px;
-    width: 20%;
-    padding: 5px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .scientific-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  .scientific-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #bd1212;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .scientific-button2 {
-    width: 100%;
-    padding: 10px;
-    background-color: #12bd1b;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .scientific-button:active {
-    background-color: #0056b3;
-  }
-  
-  .scientific-button:hover {
-    background-color: #0056b3;
-  }
-  .scientific-button2:hover {
-    background-color: #00b39e;
-  }
-  
-  .scientific-button:focus {
-    outline: none;
-  }
-  
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
 
-  /* Stopwatch */
+.scientific-input-output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-  .stopwatch-Body {
-    text-align: center;
-    margin-top: 10px;
+.scientific-input {
+  width: 80%;
+  padding: 5px;
+}
+.scientific-text {
+  height: 25px;
+}
 
-  }
-  .stopwatch-timer-1 {
-    font-size: 1em;
-    margin-bottom: 20px;
-    opacity: .5;
-  }
-  
-  .stopwatch-timer {
-    font-size: 3em;
-    margin-bottom: 20px;
-    margin-top: -20px;
-  }
+.scientific-output {
+  height: 25px;
+  width: 20%;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+.scientific-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
 
-  /* Timers */
+.scientific-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #bd1212;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.scientific-button2 {
+  width: 100%;
+  padding: 10px;
+  background-color: #12bd1b;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .timers-text{
-    font-size: 30px;
-    opacity: .5;
-  }
+.scientific-button:active {
+  background-color: #0056b3;
+}
 
-  .timers-text-2{
-    font-size: 30px;
-    opacity: .5;
-    margin-top: -0px;
-  }
+.scientific-button:hover {
+  background-color: #0056b3;
+}
+.scientific-button2:hover {
+  background-color: #00b39e;
+}
 
-  .timers-input{
-    width: 250px;
-    margin-top: -25px;
-    
-  }
+.scientific-button:focus {
+  outline: none;
+}
 
+/* Stopwatch */
 
-  /* Internet Speed */
-  
-  
+.stopwatch-Body {
+  text-align: center;
+  margin-top: 10px;
+}
+.stopwatch-timer-1 {
+  font-size: 1em;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.stopwatch-timer {
+  font-size: 3em;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+/* Notepad */
+
+.notepad-textarea {
+  height: 400px;
+  width: 99.2%;
+  border: 1px solid rgb(219, 222, 222);
+  border-radius: 5px;
+}
+
+/* Timers */
+
+.timers-text {
+  font-size: 30px;
+  opacity: 0.5;
+}
+
+.timers-text-2 {
+  font-size: 30px;
+  opacity: 0.5;
+  margin-top: -0px;
+}
+
+.timers-input {
+  width: 250px;
+  margin-top: -25px;
+}
+
+/* Internet Speed */
