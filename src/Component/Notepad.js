@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import "./Component.css";
 import ComponentCart from "../Cart/ComponentCart";
-import { Button, message, } from "antd";
-import { DownloadOutlined } from '@ant-design/icons';
+import { Button, message } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
 
 export default function Notepad() {
   const [text, setText] = useState("");
+  const [messageApi, contextHolder] = message.useMessage();
 
   // Function to handle text change
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
+  const warning = () => {
+    messageApi.open({
+      type: "warning",
+      content: "The Notepad is empty. Please add some text before downloading.",
+    });
+  };
   // Function to handle download button click
   const handleDownload = () => {
     if (text.trim() === "") {
-      alert("The Notepad is empty. Please add some text before downloading.");
+      messageApi.open({
+        type: "warning",
+        content:
+          "The Notepad is empty. Please add some text before downloading.",
+      });
       return;
     }
 
@@ -41,6 +52,7 @@ export default function Notepad() {
   };
   return (
     <div>
+      {contextHolder}
       <ComponentCart mainText="Notepad" bodyText="Notepad..." />
       <div className="ComponentBody">
         <div>
@@ -56,7 +68,7 @@ export default function Notepad() {
           <div>
             <Button
               onClick={handleDownload}
-              type= "primary"
+              type="primary"
               size="large"
               style={{
                 marginRight: "30px",
@@ -66,8 +78,9 @@ export default function Notepad() {
               Download
             </Button>
             <Button onClick={handleClean} size="large" type="primary" danger>
-            Clean
+              Clean
             </Button>
+            <Button onClick={warning}>Warning</Button>
           </div>
         </div>
       </div>
