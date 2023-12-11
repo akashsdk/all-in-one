@@ -5,7 +5,7 @@ import { Button, message, Modal } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 
 export default function Notepad() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [text2, setText2] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
   const [isModalOpen, setIsModalOpen] = useState(false);
