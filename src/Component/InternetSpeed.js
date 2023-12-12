@@ -11,7 +11,7 @@ export default function InternetSpeed() {
         bodyText="InternetSpeed..."
       />
       <div className="ComponentBody">
-        akas
+        
       </div>
     </div>
   )
