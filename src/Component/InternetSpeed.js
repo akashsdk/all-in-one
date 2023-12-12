@@ -18,7 +18,7 @@ export default function InternetSpeed() {
           target="_blank"
         >
           <div className="InternetSpeedDiv">
-          <img height={180} width={200} src={intLogo} alt="" />
+          <img height={145} width={200} src={intLogo} alt="" />
         </div>
         </a>
         
@@ -34,7 +34,7 @@ export default function InternetSpeed() {
           <img height={180} width={200} src={fastLOgo} alt="" />
         </div>
         </a>
-        
+
         <div style={{height:'20px'}} />
         <a
           style={{ textDecoration: "none" }}
