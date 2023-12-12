@@ -224,3 +224,14 @@
 }
 
 /* Internet Speed */
+.InternetSpeedDiv{
+  height: 210px;
+  width: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.InternetSpeedDiv:hover{
+  border: 1px solid aqua;
+  border-radius: 15px;
+}
